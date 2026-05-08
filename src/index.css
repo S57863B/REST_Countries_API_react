@@ -1,0 +1,62 @@
+:root {
+  /* Dark Mode Defaults */
+  --bg-color: #202c37;
+  --text-color: #ffffff;
+  --element-bg: #2b3945;
+  --shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  --border-radius-heavy: 24px;
+  --transition-speed: 0.4s ease-in-out;
+}
+
+[data-theme='light'] {
+  /* Light Mode Overrides */
+  --bg-color: #fafafa;
+  --text-color: #111517;
+  --element-bg: #ffffff;
+  --shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  min-height: 100vh;
+}
+
+header, .card, button, input {
+  background-color: var(--element-bg);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius-heavy);
+  padding: 12px 24px;
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='light'] button:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 4px;
+  border-radius: inherit;
+}
