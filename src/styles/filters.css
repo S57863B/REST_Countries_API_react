@@ -1,0 +1,85 @@
+/* Dashboard layout wrapper */
+.dashboard-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 800px) {
+  .dashboard-controls {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Shared input styling */
+.control-input {
+  background-color: var(--element-bg);
+  color: var(--text-color);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-heavy);
+  padding: 16px 24px;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: transform var(--transition-speed), 
+              box-shadow var(--transition-speed), 
+              border-color var(--transition-speed), 
+              background-color var(--transition-speed), 
+              color var(--transition-speed);
+}
+
+.control-input:focus, .control-input:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='light'] .control-input:focus, 
+[data-theme='light'] .control-input:hover:not(:disabled) {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Search Bar specifics */
+.search-bar-container {
+  flex: 1;
+  max-width: 480px;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+/* Filter Controls specifics */
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  min-width: 200px;
+  /* Custom modern arrow */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%23888888%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px top 50%;
+  background-size: 16px auto;
+  padding-right: 48px; 
+}
+
+.custom-select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow);
+}
