@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { VisitListProvider, useVisitList } from './context/VisitListContext';
 import Header from './components/Header';
@@ -39,9 +39,9 @@ const VisitListSidebar: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
+<ThemeProvider>
       <VisitListProvider>
-        <Router>
+        <Router> 
           <Header />
           <VisitListSidebar />
           <main className="app-main">

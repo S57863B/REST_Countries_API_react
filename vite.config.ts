@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  base: 'REST_Countries_API_react'
 })
