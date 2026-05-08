@@ -1,0 +1,117 @@
+/* Responsive Grid Layout */
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 40px;
+  padding-bottom: 64px;
+}
+
+/* Card Container with Soft Shadow and Glassmorphism */
+.country-card {
+  background-color: var(--element-bg);
+  border-radius: var(--border-radius-heavy);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow var(--transition-speed);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  /* Glassmorphism touch */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'] .country-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth Scale-Up Animation */
+.country-card:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .country-card:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.country-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 24px 24px 16px 24px;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.card-content p strong {
+  font-weight: 600;
+}
+
+/* Action Button Styling */
+.card-actions {
+  padding: 0 24px 24px 24px;
+}
+
+.visit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.85rem;
+  border-radius: calc(var(--border-radius-heavy) / 1.5);
+  transition: all 0.3s ease;
+}
+
+.visit-btn.add {
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  box-shadow: none;
+}
+
+.visit-btn.add:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.visit-btn.remove {
+  background-color: #ef4444; /* Soft Red */
+  color: white;
+  border: 2px solid transparent;
+}
+
+.visit-btn.remove:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+.no-results {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 64px 24px;
+  opacity: 0.8;
+}
